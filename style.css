@@ -1,0 +1,33 @@
+:root {
+  --kansas-black: #0e0904;
+  --kansas-dark: #1c1208;
+  --ruby: #cc1a1a;
+  --ivory: #faf0d8;
+  --yellow: #e8c020;
+}
+
+body {
+  background: var(--kansas-black);
+  color: var(--ivory);
+  font-family: sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  cursor: none; /* Hide default cursor for the custom one */
+}
+
+/* --- Required FX --- */
+#grain { position: fixed; inset: 0; z-index: 9998; pointer-events: none; opacity: 0.05; }
+#cd { position: fixed; width: 6px; height: 6px; background: var(--ruby); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); }
+#cr { position: fixed; width: 30px; height: 30px; border: 1px solid var(--ruby); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s; }
+
+/* --- Reveal Animation --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease-out; }
+.reveal.on { opacity: 1; transform: translateY(0); }
+
+/* --- Basic Layout --- */
+nav { display: flex; justify-content: space-between; padding: 40px; position: fixed; width: 100%; z-index: 100; }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: var(--ivory); text-decoration: none; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; }
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--kansas-dark); }
+.hero-title { font-size: 5rem; text-transform: uppercase; }
+#dust { position: absolute; inset: 0; }
